@@ -1,0 +1,116 @@
+/* GENERAL */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #ffffff;
+    color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff385c;
+}
+
+.navbar nav a {
+    margin: 0 14px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.welcome {
+    font-size: 14px;
+}
+
+/* CONTENT */
+.container {
+    width: 80%;
+    margin: 40px auto;
+}
+
+.flex {
+    display: flex;
+    gap: 30px;
+}
+
+.left-box {
+    flex: 2;
+}
+
+.right-box {
+    flex: 1;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.right-box input{
+    width: 95%;
+}
+
+.right-box select{
+    width: 102%;
+}
+
+.right-box button{
+    width: 102%;
+}
+
+.info-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #ff385c;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.price {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 40px;
+    padding: 40px;
+    background: #fafafa;
+    border-top: 1px solid #ddd;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-grid h4 {
+    margin-bottom: 10px;
+}
