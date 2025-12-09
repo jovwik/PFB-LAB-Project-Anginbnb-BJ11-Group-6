@@ -1,0 +1,259 @@
+/* --- 1. RESET & VARIABLES --- */
+:root {
+    --primary-color: #ff385c;
+    --primary-hover: #d90b3e;
+    --text-dark: #222222;
+    --text-gray: #717171;
+    --border-color: #dddddd;
+    --bg-color: #ffffff;
+    --bg-secondary: #f7f7f7;
+    --danger-bg: #fff5f5; /* Warna pink tipis untuk danger zone */
+    --danger-border: #ffdddd;
+    --danger-text: #c13515;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    color: var(--text-dark);
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a { text-decoration: none; color: inherit; cursor: pointer; }
+ul { list-style: none; }
+
+/* --- 2. HEADER --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+    height: 80px;
+    border-bottom: 1px solid #ebebeb;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 800;
+    flex: 1; /* Mengambil ruang kiri */
+}
+
+.nav-center {
+    flex: 2; /* Mengambil ruang tengah */
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+
+.nav-center a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.nav-center a:hover { color: var(--text-gray); }
+
+.nav-right {
+    flex: 1; /* Mengambil ruang kanan */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.welcome-text {
+    font-size: 14px;
+    color: var(--text-gray);
+}
+
+/* --- 3. MAIN CONTENT --- */
+main {
+    flex: 1;
+    padding: 48px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-title h1 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.page-title p {
+    color: var(--text-gray);
+    font-size: 16px;
+}
+
+/* Profile Container */
+.profile-container {
+    width: 100%;
+    max-width: 600px; /* Lebar kartu sesuai gambar */
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* Jarak antar kartu */
+}
+
+/* --- CARD STYLES --- */
+.card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+/* Form Elements */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #b0b0b0;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    color: var(--text-dark);
+}
+
+.input-group input:focus {
+    border-color: var(--text-dark);
+    border-width: 2px;
+    padding: 11px 15px; /* Kompensasi border tebal */
+}
+
+/* Primary Button (Full Width) */
+.btn-primary {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+/* --- DANGER ZONE --- */
+.card.danger-zone {
+    background-color: var(--danger-bg); /* Background agak pink */
+    border: 1px solid var(--danger-bg); /* Border disamarkan atau dibuat merah tipis */
+}
+
+.danger-title {
+    color: var(--danger-text);
+}
+
+.danger-desc {
+    font-size: 14px;
+    color: var(--danger-text);
+    margin-bottom: 20px;
+}
+
+.btn-danger {
+    background-color: #d32f2f; /* Merah gelap */
+    color: white;
+    padding: 10px 20px; /* Tombol kecil sesuai gambar */
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background-color: #b71c1c;
+}
+
+/* --- 4. FOOTER --- */
+footer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    padding: 48px 80px 24px 80px;
+    font-size: 14px;
+    margin-top: auto;
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.col h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text-dark);
+}
+
+.col ul li { margin-bottom: 12px; }
+.col ul li a { color: var(--text-dark); }
+.col ul li a:hover { text-decoration: underline; }
+
+.brand-desc {
+    color: var(--text-gray);
+    line-height: 1.5;
+}
+
+.footer-bottom {
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-dark);
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a:hover { text-decoration: underline; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    header { padding: 0 20px; height: auto; flex-direction: column; padding-bottom: 10px; }
+    .nav-center { flex-direction: column; gap: 10px; margin: 10px 0; }
+    .footer-columns { grid-template-columns: 1fr; }
+    footer { padding: 40px 24px; }
+}
