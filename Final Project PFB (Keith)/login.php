@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +9,7 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-   
+    
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-left">
@@ -24,13 +26,13 @@
         </div>
     </nav>
 
-   
+    
     <div class="main-content">
         <div class="login-container">
             <div class="login-box">
                 <h2 class="login-title">Welcome back</h2>
 
-                
+               
 
                 <form action="login.php" method="POST" class="login-form">
                     <div class="form-group">
@@ -70,7 +72,7 @@
         </div>
     </div>
 
-  
+    
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section">
@@ -114,5 +116,19 @@
             </div>
         </div>
     </footer>
+
+    <?php
+    include 'db_connect.php';
+    $koneksi = mysqli_connect('localhost','root','','student_db');
+
+    if(mysqli_connect_errno()){
+        echo'koneksi database gagal : ' . mysqli_connect_error();
+    }
+    ?>
+
+    
+
 </body>
 </html>
+
+

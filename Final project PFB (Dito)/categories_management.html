@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Categories - Anginbnb</title>
+    <link rel="stylesheet" href="categories_management.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">anginbnb</div>
+        <nav class="nav-center">
+            <a href="#">Manage Users</a>
+            <a href="#">Manage Properties</a>
+            <a href="#">Payment Types</a>
+            <a href="#" class="active">Categories</a>
+            <a href="#">Profile</a>
+            <a href="#">Logout</a>
+        </nav>
+        <div class="nav-right">Welcome, admin</div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>Categories Management</h1>
+            <p>Manage all property categories</p>
+        </div>
+
+        <div class="container">
+            <div class="card">
+                <h3>Create New Category</h3>
+                <span class="card-subtitle">4 categories in system</span>
+                
+                <form class="category-input-row">
+                    <input type="text" placeholder="Enter category name...">
+                    <button type="submit" class="btn-primary">Create</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Category Name</th>
+                            <th class="col-action">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-id">1</td>
+                            <td>Hotel</td>
+                            <td class="col-action"><button class="btn-delete">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td class="col-id">2</td>
+                            <td>Apartment</td>
+                            <td class="col-action"><button class="btn-delete">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td class="col-id">3</td>
+                            <td>Villa</td>
+                            <td class="col-action"><button class="btn-delete">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td class="col-id">4</td>
+                            <td>Resort</td>
+                            <td class="col-action"><button class="btn-delete">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-columns">
+            <div class="col">
+                <h4>Anginbnb</h4>
+                <p>Your home away from home. Discover unique places to stay around the world.</p>
+            </div>
+            <div class="col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Safety Information</a></li>
+                    <li><a href="#">Cancellation Options</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="#">Anginbnb Blog</a></li>
+                    <li><a href="#">Host Resources</a></li>
+                    <li><a href="#">Community Forum</a></li>
+                    <li><a href="#">Refer Friends</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Investors</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2025 Anginbnb, Inc. All rights reserved.</span>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

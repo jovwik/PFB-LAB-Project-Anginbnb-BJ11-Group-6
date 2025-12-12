@@ -10,7 +10,7 @@ body {
     color: #333;
 }
 
-/* Navigation Bar */
+
 .navbar {
     background-color: #fff;
     border-bottom: 1px solid #e0e0e0;
@@ -62,7 +62,7 @@ body {
     gap: 16px;
 }
 
-/* Main Content */
+
 .main-content {
     min-height: calc(100vh - 400px);
     display: flex;
@@ -199,7 +199,6 @@ body {
     text-decoration: underline;
 }
 
-/* Footer */
 .footer {
     background-color: #f7f7f7;
     border-top: 1px solid #e0e0e0;
@@ -286,4 +285,3 @@ body {
     color: #222;
 }
 
-/* Responsive Design */
