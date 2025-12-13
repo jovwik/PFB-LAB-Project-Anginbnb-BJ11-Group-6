@@ -1,0 +1,119 @@
+
+
+
+
+
+
+
+
+
+HTML footer: 
+    <footer>
+        <div class="footcont">
+            <div>
+                <h4>Anginbnb</h4>
+                <p>Your home away from home. Discover unique places to stay around the world.</p>
+            </div>
+            <div>
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Safety Information</a></li>
+                    <li><a href="#">Cancellation Options</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="#">Anginbnb Blog</a></li>
+                    <li><a href="#">Host Resources</a></li>
+                    <li><a href="#">Community Forum</a></li>
+                    <li><a href="#">Refer Friends</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Investors</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <div>© 2025 Anginbnb, Inc. All rights reserved.</div>
+            <div class="rightside">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookies Policy</a>
+            </div>
+        </div>
+    </footer>
+
+CSS footer: 
+    footer {
+        background-color: #f9f9f9;
+        padding: 40px 30px 20px;
+        border-top: 1px solid #ddd;
+        font-size: 0.9rem;
+        color: #555;
+    }
+
+    .footcont {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto 15px;
+    }
+
+    .footcont h4 {
+        margin-bottom: 12px;
+        font-weight: 700;
+        color: #333;
+    }
+
+    .footcont p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .footcont ul {
+        list-style: none;
+    }
+
+    .footcont ul li {
+        margin-bottom: 8px;
+    }
+
+    .footcont ul li a {
+        color: #555;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footcont ul li a:hover {
+        color: #ff2a55;
+    }
+
+    .copyright {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        font-size: 0.8rem;
+        color: #555;
+        margin-top: 2rem;
+    }
+
+    .rightside {
+        display: flex;
+        gap: 20px;
+    }
+
+    .rightside a {
+        color: #555;
+        text-decoration: none;
+    }
