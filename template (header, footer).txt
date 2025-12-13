@@ -6,53 +6,53 @@
 
 
 
+Footer: 
+    HTML: 
+        <footer>
+            <div class="footcont">
+                <div>
+                    <h4>Anginbnb</h4>
+                    <p>Your home away from home. Discover unique places to stay around the world.</p>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Safety Information</a></li>
+                        <li><a href="#">Cancellation Options</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Anginbnb Blog</a></li>
+                        <li><a href="#">Host Resources</a></li>
+                        <li><a href="#">Community Forum</a></li>
+                        <li><a href="#">Refer Friends</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Investors</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <div>© 2025 Anginbnb, Inc. All rights reserved.</div>
+                <div class="rightside">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookies Policy</a>
+                </div>
+            </div>
+        </footer>
 
-HTML footer: 
-    <footer>
-        <div class="footcont">
-            <div>
-                <h4>Anginbnb</h4>
-                <p>Your home away from home. Discover unique places to stay around the world.</p>
-            </div>
-            <div>
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Safety Information</a></li>
-                    <li><a href="#">Cancellation Options</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Community</h4>
-                <ul>
-                    <li><a href="#">Anginbnb Blog</a></li>
-                    <li><a href="#">Host Resources</a></li>
-                    <li><a href="#">Community Forum</a></li>
-                    <li><a href="#">Refer Friends</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Press</a></li>
-                    <li><a href="#">Investors</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            <div>© 2025 Anginbnb, Inc. All rights reserved.</div>
-            <div class="rightside">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Cookies Policy</a>
-            </div>
-        </div>
-    </footer>
-
-CSS footer: 
+    CSS: 
     footer {
         background-color: #f9f9f9;
         padding: 40px 30px 20px;
