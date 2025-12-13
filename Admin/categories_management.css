@@ -1,4 +1,4 @@
-/* --- 1. RESET & VARIABLES --- */
+
 :root {
     --primary-color: #ff385c;
     --primary-hover: #d90b3e;
@@ -26,7 +26,6 @@ body {
 
 a { text-decoration: none; color: inherit; cursor: pointer; }
 
-/* --- 2. HEADER --- */
 header {
     display: flex;
     justify-content: space-between;
@@ -46,26 +45,26 @@ header {
     font-weight: 800;
 }
 
-.nav-center {
+.navtengah {
     display: flex;
     gap: 24px;
 }
 
-.nav-center a {
+.navtengah a {
     font-size: 14px;
     font-weight: 500;
     color: var(--text-dark);
 }
 
-.nav-center a:hover { color: var(--text-gray); }
-.nav-center a.active { font-weight: 800; } /* Penanda menu aktif */
+.navtengah a:hover { color: var(--text-gray); }
+.navtengah a.active { font-weight: 800; } 
 
-.nav-right {
+.navkanan {
     font-size: 14px;
     color: var(--text-gray);
 }
 
-/* --- 3. MAIN LAYOUT --- */
+
 main {
     flex: 1;
     padding: 40px 20px;
@@ -74,23 +73,23 @@ main {
     align-items: center;
 }
 
-.page-header {
+.pagehead {
     text-align: center;
     margin-bottom: 40px;
 }
 
-.page-header h1 {
+.pagehead h1 {
     font-size: 32px;
     font-weight: 800;
     margin-bottom: 8px;
 }
 
-.page-header p {
+.pagehead p {
     color: var(--text-gray);
     font-size: 16px;
 }
 
-/* --- CARDS --- */
+
 .container {
     width: 100%;
     max-width: 800px;
@@ -113,21 +112,21 @@ main {
     margin-bottom: 8px;
 }
 
-.card-subtitle {
+.cardsub {
     font-size: 14px;
     color: var(--text-gray);
     margin-bottom: 20px;
     display: block;
 }
 
-/* --- FORM INPUTS & BUTTONS --- */
-.category-input-row {
+
+.cateinput {
     display: flex;
     gap: 10px;
     margin-top: 20px;
 }
 
-.category-input-row input {
+.cateinput input {
     flex: 1;
     padding: 12px;
     border: 1px solid #b0b0b0;
@@ -136,10 +135,10 @@ main {
     outline: none;
 }
 
-.category-input-row input:focus {
+.cateinput input:focus {
     border-color: var(--text-dark);
     border-width: 2px;
-    padding: 11px; /* Kompensasi border tebal */
+    padding: 11px; 
 }
 
 .btn-primary {
@@ -157,7 +156,6 @@ main {
     background-color: var(--primary-hover);
 }
 
-/* --- TABLE STYLES --- */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -180,17 +178,17 @@ td {
     vertical-align: middle;
 }
 
-.col-id {
+.colid {
     color: var(--primary-color);
     font-weight: bold;
     width: 50px;
 }
 
-.col-action {
+.colaction {
     text-align: right;
 }
 
-.btn-delete {
+.butdel {
     background-color: #dc3545;
     color: white;
     border: none;
@@ -201,11 +199,10 @@ td {
     cursor: pointer;
 }
 
-.btn-delete:hover {
+.butdel:hover {
     background-color: #bb2d3b;
 }
 
-/* --- 4. FOOTER --- */
 footer {
     background-color: var(--bg-gray);
     padding: 40px 80px;
@@ -214,7 +211,7 @@ footer {
     margin-top: auto;
 }
 
-.footer-columns {
+.fotcol {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
@@ -230,7 +227,7 @@ footer {
 .col ul li { margin-bottom: 10px; }
 .col ul li a:hover { text-decoration: underline; }
 
-.footer-bottom {
+.fotbot {
     display: flex;
     justify-content: space-between;
     border-top: 1px solid var(--border-color);
@@ -238,18 +235,17 @@ footer {
     color: var(--text-dark);
 }
 
-.footer-links a {
+.footlink a {
     margin-left: 20px;
 }
 
-.footer-links a:hover {
+.footlink a:hover {
     text-decoration: underline;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
     header { padding: 0 20px; height: auto; flex-direction: column; padding-bottom: 10px; }
     .nav-center { flex-direction: column; gap: 10px; margin: 10px 0; }
-    .footer-columns { grid-template-columns: 1fr; }
+    .fotcol { grid-template-columns: 1fr; }
     footer { padding: 40px 24px; }
 }

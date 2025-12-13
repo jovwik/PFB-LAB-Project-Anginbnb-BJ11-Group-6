@@ -1,4 +1,3 @@
-/* --- 1. RESET & VARIABEL --- */
 :root {
     --primary-color: #ff385c;
     --text-dark: #222222;
@@ -29,7 +28,6 @@ a {
     cursor: pointer;
 }
 
-/* --- 2. HEADER (NAVBAR) --- */
 header {
     display: flex;
     justify-content: space-between;
@@ -57,13 +55,13 @@ header {
     font-size: 16px;
 }
 
-.nav-right {
+.kanannav {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.nav-right a {
+.kanannav a {
     font-size: 14px;
     font-weight: 600;
     padding: 10px 16px;
@@ -71,7 +69,7 @@ header {
     transition: background 0.2s;
 }
 
-.nav-right a:hover {
+.kanannav a:hover {
     background-color: #f7f7f7;
 }
 
@@ -79,7 +77,6 @@ header {
     border: 1px solid var(--border-color);
 }
 
-/* --- 3. MAIN CONTENT (LOGIN CARD) --- */
 main {
     flex: 1;
     display: flex;
@@ -90,7 +87,7 @@ main {
     background-color: white; 
 }
 
-.login-card {
+.logcard {
     width: 100%;
     max-width: 568px;
     background: white;
@@ -101,28 +98,27 @@ main {
     margin: 24px;
 }
 
-.card-header {
+.headcard {
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 24px;
     margin-bottom: 24px;
     text-align: center;
 }
 
-.card-header h1 {
+.headcard h1 {
     font-size: 18px;
     font-weight: 700;
 }
 
-/* Form Styling */
 form {
     padding: 0 10px;
 }
 
-.input-group {
+.inpgrup {
     margin-bottom: 20px;
 }
 
-.input-group label {
+.inpgrup label {
     display: block;
     font-size: 12px;
     font-weight: 600;
@@ -130,7 +126,7 @@ form {
     margin-bottom: 6px;
 }
 
-.input-group input {
+.inpgrup input {
     width: 100%;
     padding: 16px;
     font-size: 16px;
@@ -139,20 +135,20 @@ form {
     outline: none;
 }
 
-.input-group input:focus {
+.inpgrup input:focus {
     border-color: var(--text-dark);
     border-width: 2px;
     padding: 15px;
 }
 
-.checkbox-group {
+.chkgrup {
     display: flex;
     align-items: center;
     margin-bottom: 24px;
     font-size: 14px;
 }
 
-.checkbox-group input {
+.chkgrup input {
     margin-right: 10px;
     width: 16px;
     height: 16px;
@@ -160,7 +156,7 @@ form {
     accent-color: var(--text-dark);
 }
 
-.btn-submit {
+.btnsub {
     width: 100%;
     background-color: var(--primary-color);
     color: white;
@@ -173,23 +169,22 @@ form {
     margin-bottom: 20px;
 }
 
-.btn-submit:hover {
+.btnsub:hover {
     background-color: #d90b3e;
 }
 
-.form-footer {
+.formfot {
     text-align: center;
     font-size: 14px;
     color: var(--text-dark);
 }
 
-.form-footer a {
+.formfot a {
     color: var(--primary-color);
     font-weight: 600;
     text-decoration: underline;
 }
 
-/* --- 4. FOOTER --- */
 footer {
     background-color: var(--bg-secondary);
     border-top: 1px solid var(--border-color);
@@ -198,7 +193,7 @@ footer {
     color: var(--text-dark);
 }
 
-.footer-columns {
+.fotcol {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
@@ -224,38 +219,37 @@ footer {
     text-decoration: underline;
 }
 
-.brand-desc {
+.brandesc {
     color: var(--text-gray);
     line-height: 1.5;
     max-width: 250px;
 }
 
-.footer-bottom {
+.fotbot {
     padding-top: 24px;
     display: flex;
     justify-content: space-between;
     color: var(--text-dark);
 }
 
-.footer-links {
+.fotlink {
     display: flex;
     gap: 20px;
 }
 
-.footer-links a:hover {
+.fotlink a:hover {
     text-decoration: underline;
 }
 
-/* --- 5. RESPONSIVE (Mobile) --- */
 @media (max-width: 768px) {
     header, footer {
         padding: 20px;
     }
     .nav-center { display: none; }
-    .footer-columns {
+    .fotcol {
         grid-template-columns: 1fr;
     }
-    .footer-bottom {
+    .fotbot {
         flex-direction: column;
         gap: 10px;
     }

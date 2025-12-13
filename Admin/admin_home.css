@@ -11,7 +11,7 @@ body {
     padding: 15px 0;
 }
 
-.nav-center {
+.navtengah {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,7 +39,7 @@ body {
 }
 
 
-.hero {
+.bannergede {
     background: #ff3366;
     color: white;
     text-align: center;
@@ -84,7 +84,7 @@ body {
     gap: 20px;
 }
 
-.property-card {
+.propertikartu {
     background: white;
     padding: 20px;
     border-radius: 12px;
@@ -92,7 +92,7 @@ body {
     color: black;
 }
 
-.property-card:hover {
+.propertikartu:hover {
     background: #f0f0f0;
 }
 
