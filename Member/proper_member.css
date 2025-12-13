@@ -44,30 +44,30 @@ body {
     gap: 30px;
 }
 
-.left-box {
+.boxkiri {
     flex: 2;
 }
 
-.right-box {
+.kananbox {
     flex: 1;
     border: 1px solid #ddd;
     padding: 20px;
     border-radius: 12px;
 }
 
-.right-box input{
+.kananbox input{
     width: 95%;
 }
 
-.right-box select{
+.kananbox select{
     width: 102%;
 }
 
-.right-box button{
+.kananbox button{
     width: 102%;
 }
 
-.info-box {
+.boxinfo {
     border: 1px solid #ddd;
     padding: 20px;
     border-radius: 12px;
@@ -106,11 +106,11 @@ footer {
     border-top: 1px solid #ddd;
 }
 
-.footer-grid {
+.fotgrid {
     display: flex;
     justify-content: space-between;
 }
 
-.footer-grid h4 {
+.fotgrid h4 {
     margin-bottom: 10px;
 }

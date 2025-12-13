@@ -30,7 +30,7 @@ body {
 }
 
 
-.auth-buttons button {
+.autbut button {
     margin-left: 10px;
     padding: 7px 16px;
     border: 1px solid #ff385c;
@@ -57,11 +57,11 @@ body {
     gap: 30px;
 }
 
-.left-box {
+.kiribox {
     flex: 2;
 }
 
-.right-box {
+.kananbox {
     flex: 1;
     border: 1px solid #ddd;
     padding: 20px;
@@ -69,7 +69,7 @@ body {
     text-align: center;
 }
 
-.info-box {
+.infobox {
     border: 1px solid #ddd;
     padding: 20px;
     border-radius: 12px;
@@ -105,11 +105,11 @@ footer {
     border-top: 1px solid #ddd;
 }
 
-.footer-grid {
+.footgrid {
     display: flex;
     justify-content: space-between;
 }
 
-.footer-grid h4 {
+.footgrid h4 {
     margin-bottom: 10px;
 }

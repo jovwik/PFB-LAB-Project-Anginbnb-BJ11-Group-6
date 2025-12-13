@@ -32,13 +32,13 @@ body {
     cursor: pointer;
 }
 
-.nav-links {
+.navlink {
     list-style: none;
     display: flex;
     gap: 25px;
 }
 
-.nav-links li a {
+.navlink li a {
     text-decoration: none;
     color: #333;
     font-weight: 600;
@@ -47,13 +47,13 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.nav-links li a:hover {
+.navlink li a:hover {
     background-color: #ff2a55;
     color: #fff;
 }
 
 
-.nav-auth {
+.navauth {
     display: flex;
     gap: 15px;
 }
@@ -102,7 +102,7 @@ body {
 }
 
 
-.hero {
+.isi {
     background: linear-gradient(90deg, #ff2a55 0%, #ff4c7a 100%);
     color: #fff;
     border-radius: 6px;
@@ -111,13 +111,13 @@ body {
     text-align: center;
 }
 
-.hero h1 {
+.isi h1 {
     font-size: 2rem;
     margin-bottom: 8px;
     font-weight: 700;
 }
 
-.hero p {
+.isi p {
     font-size: 1rem;
     opacity: 0.85;
 }
@@ -129,13 +129,13 @@ body {
     font-size: 1.2rem;
 }
 
-.category-list {
+.catlist {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
 }
 
-.category-card {
+.catcard {
     background-color: #f7f7f7;
     text-align: center;
     padding: 20px 10px;
@@ -147,38 +147,38 @@ body {
     transition: box-shadow 0.3s ease;
 }
 
-.category-card:hover {
+.catcard:hover {
     box-shadow: 0 4px 8px rgba(255, 42, 85, 0.3);
 }
 
-.category-card h3 {
+.catcard h3 {
     margin-bottom: 6px;
     font-weight: 600;
 }
 
-.category-card p {
+.catcard p {
     font-size: 0.9rem;
     opacity: 0.7;
 }
 
 
-.featured-properties {
+.featurprop {
     margin-top: 50px;
 }
 
-.featured-properties h2 {
+.featurprop h2 {
     font-weight: 700;
     font-size: 1.2rem;
     margin-bottom: 20px;
 }
 
-.property-grid {
+.propgrid {
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
     gap: 20px;
 }
 
-.property-card {
+.propcard {
     border: 1px solid #eee;
     border-radius: 6px;
     padding: 20px;
@@ -189,12 +189,12 @@ body {
     justify-content: space-between;
 }
 
-.property-card h3 {
+.propcard h3 {
     font-weight: 600;
     margin-bottom: 10px;
 }
 
-.property-card p {
+.propcard p {
     font-size: 0.9rem;
     margin-bottom: 6px;
 }
@@ -226,7 +226,7 @@ footer {
     color: #555;
 }
 
-.footer-container {
+.footcont {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -235,36 +235,36 @@ footer {
     margin: 0 auto 15px;
 }
 
-.footer-container div {
+.footcont div {
     flex: 1 1 200px;
 }
 
-.footer-container h4 {
+.footcont h4 {
     margin-bottom: 12px;
     font-weight: 700;
     color: #333;
 }
 
-.footer-container p {
+.footcont p {
     font-size: 0.9rem;
     line-height: 1.4;
 }
 
-.footer-container ul {
+.footcont ul {
     list-style: none;
 }
 
-.footer-container ul li {
+.footcont ul li {
     margin-bottom: 8px;
 }
 
-.footer-container ul li a {
+.footcont ul li a {
     color: #555;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.footer-container ul li a:hover {
+.footcont ul li a:hover {
     color: #ff2a55;
 }
 
