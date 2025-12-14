@@ -217,7 +217,6 @@ body {
     color: white;
 }
 
-
 footer {
     background-color: #f9f9f9;
     padding: 40px 30px 20px;
@@ -225,7 +224,6 @@ footer {
     font-size: 0.9rem;
     color: #555;
 }
-
 .footcont {
     display: flex;
     justify-content: space-between;
@@ -234,46 +232,42 @@ footer {
     max-width: 1200px;
     margin: 0 auto 15px;
 }
-
-.footcont div {
-    flex: 1 1 200px;
-}
-
 .footcont h4 {
     margin-bottom: 12px;
     font-weight: 700;
     color: #333;
 }
-
 .footcont p {
     font-size: 0.9rem;
     line-height: 1.4;
 }
-
 .footcont ul {
     list-style: none;
 }
-
 .footcont ul li {
     margin-bottom: 8px;
 }
-
 .footcont ul li a {
     color: #555;
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
 .footcont ul li a:hover {
     color: #ff2a55;
 }
-
-copyright {
-    text-align: center;
-}
-
-footer .copyright {
+.copyright {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     font-size: 0.8rem;
-    color: #aaa;
-    text-align: center;
+    color: #555;
+    margin-top: 2rem;
+}
+.rightside {
+    display: flex;
+    gap: 20px;
+}
+.rightside a {
+    color: #555;
+    text-decoration: none;
 }
