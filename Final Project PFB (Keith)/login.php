@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,33 +8,33 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    
+   
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-left">
+        <div class="navcont">
+            <div class="kirinav">
                 <a href="index.php" class="logo">anginbnb</a>
             </div>
-            <div class="nav-center">
-                <a href="index.php" class="nav-link">Home</a>
-                <a href="properties.php" class="nav-link">Properties</a>
+            <div class="tengahnav">
+                <a href="index.php" class="linknav">Home</a>
+                <a href="properties.php" class="linknav">Properties</a>
             </div>
-            <div class="nav-right">
-                <a href="login.php" class="nav-link active">Login</a>
-                <a href="register.php" class="nav-link">Sign up</a>
+            <div class="kanannav">
+                <a href="login.php" class="linknav active">Login</a>
+                <a href="register.php" class="linknav">Sign up</a>
             </div>
         </div>
     </nav>
 
-    
-    <div class="main-content">
-        <div class="login-container">
-            <div class="login-box">
-                <h2 class="login-title">Welcome back</h2>
+   
+    <div class="maincont">
+        <div class="logcont">
+            <div class="logbox">
+                <h2 class="logtitl">Welcome back</h2>
 
-               
+                
 
-                <form action="login.php" method="POST" class="login-form">
-                    <div class="form-group">
+                <form action="login.php" method="POST" class="logform">
+                    <div class="grupform">
                         <label for="email">Email address</label>
                         <input 
                             type="email" 
@@ -45,7 +44,7 @@
                         >
                     </div>
 
-                    <div class="form-group">
+                    <div class="grupform">
                         <label for="password">Password</label>
                         <input 
                             type="password" 
@@ -55,14 +54,14 @@
                         >
                     </div>
 
-                    <div class="form-group checkbox-group">
-                        <label class="checkbox-label">
+                    <div class="grupform chkgrup">
+                        <label class="chklabel">
                             <input type="checkbox" name="remember" id="remember">
                             <span>Remember me for 7 days</span>
                         </label>
                     </div>
 
-                    <button type="submit" class="btn-signin">Sign in</button>
+                    <button type="submit" class="btnsign">Sign in</button>
 
                     <div class="register-link">
                         Don't have an account? <a href="register.php">Sign up</a>
@@ -72,14 +71,13 @@
         </div>
     </div>
 
-    
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Anginbnb</h3>
+  <footer>
+        <div class="footcont">
+            <div>
+                <h4>Anginbnb</h4>
                 <p>Your home away from home. Discover unique places to stay around the world.</p>
             </div>
-            <div class="footer-section">
+            <div>
                 <h4>Support</h4>
                 <ul>
                     <li><a href="#">Help Center</a></li>
@@ -88,7 +86,7 @@
                     <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
+            <div>
                 <h4>Community</h4>
                 <ul>
                     <li><a href="#">Anginbnb Blog</a></li>
@@ -97,7 +95,7 @@
                     <li><a href="#">Refer Friends</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
+            <div>
                 <h4>Company</h4>
                 <ul>
                     <li><a href="#">About Us</a></li>
@@ -107,15 +105,17 @@
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2025 Anginbnb, Inc. All rights reserved.</p>
-            <div class="footer-links">
+        <div class="copyright">
+            <div>© 2025 Anginbnb, Inc. All rights reserved.</div>
+            <div class="rightside">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
-                <a href="#">Cookie Policy</a>
+                <a href="#">Cookies Policy</a>
             </div>
         </div>
     </footer>
+</body>
+</html>
 
     <?php
     include 'db_connect.php';

@@ -30,7 +30,17 @@ body {
 }
 
 
-.autbut button {
+/* .autbut button { */
+    /* margin-left: 10px; */
+    /* padding: 7px 16px; */
+    /* border: 1px solid #ff385c; */
+    /* border-radius: 20px; */
+    /* background: white; */
+    /* color: #ff385c; */
+    /* cursor: pointer; */
+/* } */
+
+.autbut a {
     margin-left: 10px;
     padding: 7px 16px;
     border: 1px solid #ff385c;
@@ -38,6 +48,7 @@ body {
     background: white;
     color: #ff385c;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .signup {
