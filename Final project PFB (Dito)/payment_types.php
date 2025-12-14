@@ -1,34 +1,23 @@
 <?php
 session_start();
-include 'conn.php'; // Pastikan nama file koneksi sesuai (koneksi.php atau conn.php)
+include 'conn.php'; 
 
-// 1. CEK LOGIN (Sesuai dengan Role Admin di Word)
-// Asumsi: Session 'role' diset saat login. Jika belum ada fitur login, bagian ini bisa dikomentari dulu.
-/*
-if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
-    header("location:login.php");
-    exit;
-}
-*/
-
-// --- LOGIKA TAMBAH DATA (CREATE) ---
-// Sesuai kriteria: Insert form to insert new payment type [cite: 387]
 if (isset($_POST['create_payment'])) {
     $name = $_POST['payment_name'];
 
-    // Validasi: Name Must be filled [cite: 389]
+    
     if (empty(trim($name))) {
         echo "<script>
             alert('Gagal: Nama Payment Type harus diisi!'); 
             window.location.href='payment_types.php';
         </script>";
     } else {
-        // Query Insert
+        
         $query = "INSERT INTO mspaymenttype (PaymentTypeName) VALUES ('$name')";
         $insert = mysqli_query($koneksi, $query);
 
         if ($insert) {
-            // Sesuai kriteria: Show success message 
+            
             echo "<script>
                 alert('Success! New payment type added.'); 
                 window.location.href='payment_types.php';
@@ -42,12 +31,12 @@ if (isset($_POST['create_payment'])) {
     }
 }
 
-// --- LOGIKA HAPUS DATA (DELETE) ---
-// Sesuai kriteria: Provide a delete button that will remove the selected payment type 
+
+
 if (isset($_POST['delete_payment'])) {
     $id = $_POST['payment_id'];
     
-    // Query Delete
+    
     $query = "DELETE FROM mspaymenttype WHERE PaymentTypeID = '$id'";
     $delete = mysqli_query($koneksi, $query);
 
@@ -64,8 +53,8 @@ if (isset($_POST['delete_payment'])) {
     }
 }
 
-// --- LOGIKA TAMPIL DATA (READ) ---
-// Sesuai kriteria: Show the payment type’s ID and name [cite: 385]
+
+
 $result = mysqli_query($koneksi, "SELECT * FROM mspaymenttype");
 ?>
 
@@ -152,49 +141,45 @@ $result = mysqli_query($koneksi, "SELECT * FROM mspaymenttype");
     </main>
 
     <footer>
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Anginbnb</h3>
-                    <p>Your home away from home. Discover unique places to stay around the world.</p>
-                </div>
-                <div class="footer-links">
-                    <div class="link-col">
-                        <h4>Support</h4>
-                        <ul>
-                            <li><a href="#">Help Center</a></li>
-                            <li><a href="#">Safety Information</a></li>
-                            <li><a href="#">Cancellation Options</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                        </ul>
-                    </div>
-                    <div class="link-col">
-                        <h4>Community</h4>
-                        <ul>
-                            <li><a href="#">Anginbnb Blog</a></li>
-                            <li><a href="#">Host Resources</a></li>
-                            <li><a href="#">Community Forum</a></li>
-                            <li><a href="#">Refer Friends</a></li>
-                        </ul>
-                    </div>
-                    <div class="link-col">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Press</a></li>
-                            <li><a href="#">Investors</a></li>
-                        </ul>
-                    </div>
-                </div>
+        <div class="footcont">
+            <div>
+                <h4>Anginbnb</h4>
+                <p>Your home away from home. Discover unique places to stay around the world.</p>
             </div>
-            <div class="footer-bottom">
-                <div class="copyright">&copy; 2025 Anginbnb, Inc. All rights reserved.</div>
-                <div class="legal-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Cookie Policy</a>
-                </div>
+            <div>
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Safety Information</a></li>
+                    <li><a href="#">Cancellation Options</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="#">Anginbnb Blog</a></li>
+                    <li><a href="#">Host Resources</a></li>
+                    <li><a href="#">Community Forum</a></li>
+                    <li><a href="#">Refer Friends</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Investors</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <div>© 2025 Anginbnb, Inc. All rights reserved.</div>
+            <div class="rightside">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookies Policy</a>
             </div>
         </div>
     </footer>
