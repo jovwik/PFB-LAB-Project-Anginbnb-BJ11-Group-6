@@ -1,0 +1,243 @@
+* {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f8f9fb;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR (Tidak ada perubahan) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    color: #ff4d6d;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.navbar nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.welcome {
+    font-size: 14px;
+}
+
+/* CONTENT - PERBAIKAN LEBAR UTAMA */
+.container {
+    /* Meningkatkan max-width agar lebih lebar, sesuai dengan gambar */
+    max-width: 1200px; 
+    margin: 40px auto;
+    padding: 0 40px; /* Tambahkan padding agar tidak terlalu mepet ke tepi */
+    flex-grow: 1; 
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.container h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* CARD style for sections */
+.card {
+    background: white;
+    width: 1000px;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.05);
+    margin-bottom: 25px;
+}
+
+/* INSERT FORM SECTION */
+.insert-section h3 {
+    margin-bottom: 5px;
+}
+
+.insert-section .small-text {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.insert-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.insert-form input[type="text"] {
+    flex-grow: 1;
+    padding: 12px 15px; /* Sedikit lebih tinggi */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.btn-create {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 12px 20px; /* Sesuaikan dengan input */
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.btn-create:hover {
+    background: #e63950;
+}
+
+
+/* TABLE STYLING */
+.categories-table table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.categories-table th, .categories-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.categories-table th {
+    background-color: #f7f7f7;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #555;
+}
+
+.categories-table tr:last-child td {
+    border-bottom: none;
+}
+
+.categories-table tbody tr:hover {
+    background-color: #fafafa;
+}
+
+.categories-table td:nth-child(1) { /* ID Column */
+    width: 10%;
+    font-weight: bold;
+}
+.categories-table td:nth-child(3) { /* Actions Column */
+    width: 15%;
+    text-align: right;
+}
+
+.btn-delete {
+    background: #ff4d6d;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-delete:hover {
+    background: #e63950;
+}
+
+/* MESSAGE STYLING */
+.success, .error {
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.success {
+    background: #e6fffa;
+    color: #0f766e;
+    border: 1px solid #0f766e;
+}
+
+.error {
+    background: #ffe6e6;
+    color: #cc0000;
+    border: 1px solid #cc0000;
+}
+
+/* FOOTER - PERBAIKAN LEBAR GRID */
+footer {
+    background: white;
+    padding: 40px;
+    margin-top: auto;
+    border-top: 1px solid #eee;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    /* Meningkatkan max-width agar sesuai dengan container */
+    max-width: 1200px; 
+    margin: 0 auto 30px;
+}
+
+footer h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+footer p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.8;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    margin-top: 20px;
+}
+
+.privacy-links {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.privacy-links span {
+    font-size: 12px;
+    color: #999;
+    margin: 0 5px;
+}

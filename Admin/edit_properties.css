@@ -1,0 +1,121 @@
+/* Import/Include manage_properties.css styles */
+
+/* Spesifik untuk Edit Property Page */
+
+.container {
+    /* Turunkan lagi max-width di container halaman edit agar tampilannya lebih terpusat */
+    max-width: 1000px; 
+    margin: 40px auto;
+    padding: 0 40px; 
+    flex-grow: 1; 
+}
+
+/* Container utama kartu form */
+.edit-form-container {
+    max-width: 650px; /* Lebar Kartu Form agar mirip Figure 19 */
+    margin: 30px auto; 
+    padding: 40px;
+}
+
+.container h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card-edit-form-container{
+    background: white;
+    width: 1000px;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.05);
+    margin-bottom: 25px;
+}
+
+.property-header {
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.property-info {
+    font-size: 13px;
+    color: #777;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.edit-form .form-group {
+    /* Memastikan setiap group input memenuhi lebar penuh kartu */
+    flex: 0 0 100%;
+    margin-bottom: 15px; 
+}
+
+.edit-form .form-group label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+    display: block; /* Memastikan label berdiri sendiri */
+}
+
+.edit-form input, 
+.edit-form select, 
+.edit-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    display: block;
+}
+
+
+/* Tombol Aksi */
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.btn-primary, .btn-secondary {
+    flex: 1; 
+    text-align: center;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+    font-size: 15px;
+    border: none;
+}
+
+/* Tombol Update */
+.btn-primary {
+    background: #ff4d6d;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #e63950;
+}
+
+/* Tombol Back to List */
+.btn-secondary {
+    background: #fff;
+    color: #ff4d6d;
+    border: 1px solid #ff4d6d;
+}
+
+.btn-secondary:hover {
+    background: #f0f0f0;
+}
