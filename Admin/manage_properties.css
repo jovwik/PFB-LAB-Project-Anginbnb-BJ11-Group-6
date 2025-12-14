@@ -13,7 +13,7 @@ body {
     flex-direction: column;
 }
 
-/* NAVBAR */
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -45,7 +45,7 @@ body {
     font-size: 14px;
 }
 
-/* CONTENT (Lebar Penuh) */
+
 .container {
     max-width: 1200px; 
     margin: 40px auto;
@@ -62,7 +62,7 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* CARD style for sections */
+
 .card {
     background: white;
     border-radius: 10px;
@@ -71,7 +71,7 @@ h1 {
     margin-bottom: 25px;
 }
 
-/* INSERT FORM STYLING */
+
 .insert-section h3 {
     margin-bottom: 20px;
 }
@@ -138,14 +138,14 @@ h1 {
 }
 
 
-/* EXISTING PROPERTIES STYLING */
+
 .existing-properties .small-text {
     font-size: 13px;
     color: #777;
     margin-bottom: 20px;
 }
 
-/* Search Form */
+
 .search-form {
     display: flex;
     justify-content: flex-end;
@@ -155,7 +155,7 @@ h1 {
 
 .search-form input[type="text"] {
     flex-grow: 0;
-    width: 300px; /* Lebar search input */
+    width: 300px;
     padding: 8px 12px;
     border: 1px solid #ddd;
     border-radius: 6px;
@@ -177,7 +177,7 @@ h1 {
     background: #333;
 }
 
-/* TABLE STYLING */
+
 .existing-properties table {
     width: 100%;
     border-collapse: collapse;
@@ -206,14 +206,14 @@ h1 {
     background-color: #fafafa;
 }
 
-/* Column Widths */
-.existing-properties td:nth-child(1) { width: 5%; font-weight: bold; } /* ID */
-.existing-properties td:nth-child(3) { width: 10%; } /* Price */
-.existing-properties td:nth-child(5) { width: 8%; } /* Rating */
+
+.existing-properties td:nth-child(1) { width: 5%; font-weight: bold; } 
+.existing-properties td:nth-child(3) { width: 10%; } 
+.existing-properties td:nth-child(5) { width: 8%; } 
 .actions-col {
     width: 15%;
     text-align: right;
-    white-space: nowrap; /* Mencegah tombol turun baris */
+    white-space: nowrap; 
 }
 
 .btn-action {
@@ -228,7 +228,7 @@ h1 {
 }
 
 .btn-edit {
-    background: #007bff; /* Warna biru */
+    background: #007bff; 
     color: white;
 }
 
@@ -245,7 +245,7 @@ h1 {
     background: #e63950;
 }
 
-/* PAGINATION STYLING */
+
 .pagination {
     text-align: center;
     margin-top: 15px;
@@ -283,7 +283,7 @@ h1 {
 }
 
 
-/* MESSAGE STYLING */
+
 .success, .error {
     padding: 10px;
     border-radius: 6px;
@@ -305,7 +305,7 @@ h1 {
 }
 
 
-/* FOOTER */
+
 footer {
     background: white;
     padding: 40px;

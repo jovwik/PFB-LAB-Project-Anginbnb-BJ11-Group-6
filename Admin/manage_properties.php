@@ -1,21 +1,21 @@
 <?php
 session_start();
-require 'config.php'; // Asumsikan file config.php berisi koneksi $conn
+require 'config.php';
 
-/* ====== SIMULASI ADMIN LOGIN ====== */
+
 $_SESSION['role'] = 'admin';
 if ($_SESSION['role'] !== 'admin') {
-    // Redirect jika bukan admin
+
     header("Location: index.php");
     exit();
 }
 
-// Inisialisasi pesan
+
 $success_message = '';
 $error_message = '';
 $errors = [];
 
-/* ====== 1. FETCH CATEGORIES (for Insert Form) ====== */
+
 $categories = [];
 $categoryStmt = $conn->prepare("SELECT CategoryID, CategoryName FROM mscategory ORDER BY CategoryName ASC");
 $categoryStmt->execute();
@@ -25,9 +25,9 @@ while ($row = $categoryResult->fetch_assoc()) {
 }
 $categoryStmt->close();
 
-/* ====== 2. INSERT NEW PROPERTY LOGIC ====== */
+
 if (isset($_POST['insert_property'])) {
-    // Ambil data dari form
+
     $name = trim($_POST['name'] ?? '');
     $location = trim($_POST['location'] ?? '');
     $price = trim($_POST['price'] ?? '');
@@ -35,43 +35,40 @@ if (isset($_POST['insert_property'])) {
     $categoryID = $_POST['category'] ?? '';
     $description = trim($_POST['description'] ?? '');
 
-    // --- Validasi Kriteria ---
+
     
-    // Name
+
     if (empty($name)) $errors['name'] = 'Name must be filled.';
     if (strlen($name) > 100) $errors['name'] = 'Name must be less than 100 characters.';
     if (!empty($name) && !preg_match("/^[a-zA-Z\s,.'-]*$/", $name)) $errors['name'] = 'Name must NOT contain numbers and special characters.';
 
-    // Location
+
     if (empty($location)) $errors['location'] = 'Location must be filled.';
     if (strlen($location) > 255) $errors['location'] = 'Location must be less than 255 characters.';
 
-    // Price
+
     if (empty($price)) $errors['price'] = 'Price must be filled.';
     if (!is_numeric($price) || $price < 1) $errors['price'] = 'Price must be numeric and at least 1.';
 
-    // Rating
+
     if (empty($rating)) $errors['rating'] = 'Rating must be filled.';
     if (!is_numeric($rating)) $errors['rating'] = 'Rating must be numeric.';
     if ($rating < 0 || $rating > 10) $errors['rating'] = 'Rating must be between 0 and 10.';
     
-    // Category
+
     if (empty($categoryID)) $errors['category'] = 'Category must be chosen.';
 
-    // Description
+
     if (empty($description)) $errors['description'] = 'Description must be filled.';
     if (strlen($description) > 2000) $errors['description'] = 'Description must be less than 2000 characters.';
 
 
     if (empty($errors)) {
-        // Lakukan INSERT jika validasi berhasil
-        // Catatan: Kolom PropertyRating di DB adalah DECIMAL(2,2). 
-        // Nilai Rating 9.0 atau 10.0 mungkin perlu disesuaikan atau ubah tipe kolom DB menjadi DECIMAL(3,1) atau DECIMAL(3,2) untuk menampung 10.0. 
-        // Saya asumsikan di sini DB bisa menerima float/decimal.
+
         
         $insertStmt = $conn->prepare("INSERT INTO msproperty (PropertyName, PropertyLocation, PropertyPrice, PropertyDescription, PropertyRating, CategoryID) VALUES (?, ?, ?, ?, ?, ?)");
         
-        // Harga dan Rating harus float/double untuk bind_param
+
         $price_float = (float)$price; 
         $rating_float = (float)$rating; 
 
@@ -79,7 +76,7 @@ if (isset($_POST['insert_property'])) {
 
         if ($insertStmt->execute()) {
             $success_message = "New property **" . htmlspecialchars($name) . "** inserted successfully.";
-            // Kosongkan POST data setelah sukses
+
             $_POST = [];
         } else {
             $error_message = 'Failed to insert property: ' . $conn->error;
@@ -90,7 +87,7 @@ if (isset($_POST['insert_property'])) {
     }
 }
 
-/* ====== 3. DELETE PROPERTY LOGIC ====== */
+
 if (isset($_GET['delete_id'])) {
     $deleteID = (int)$_GET['delete_id'];
     
@@ -108,7 +105,7 @@ if (isset($_GET['delete_id'])) {
     }
     $deleteStmt->close();
     
-    // Redirect untuk menghilangkan parameter delete_id dari URL (Flash message simulation)
+  
     if ($success_message || $error_message) {
         $messages = ['success' => $success_message, 'error' => $error_message];
         $_SESSION['flash_message'] = $messages;
@@ -117,7 +114,7 @@ if (isset($_GET['delete_id'])) {
     }
 }
 
-// Ambil pesan flash dari sesi setelah redirect (untuk delete)
+
 if (isset($_SESSION['flash_message'])) {
     $success_message = $_SESSION['flash_message']['success'] ?? '';
     $error_message = $_SESSION['flash_message']['error'] ?? '';
@@ -125,17 +122,17 @@ if (isset($_SESSION['flash_message'])) {
 }
 
 
-/* ====== 4. FETCH PROPERTIES (Search & Pagination) ====== */
 
-$limit = 5; // 5 properties per page
+
+$limit = 5; 
 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
 $offset = ($page - 1) * $limit;
 
-// Search parameters
+
 $search_query = trim($_GET['search'] ?? '');
 $search_param = '%' . $search_query . '%';
 
-// Base Query
+
 $sql_count = "SELECT COUNT(*) AS total FROM msproperty mp ";
 $sql_select = "SELECT mp.PropertyID, mp.PropertyName, mp.PropertyPrice, mp.PropertyLocation, mp.PropertyRating, mc.CategoryName 
                FROM msproperty mp 
@@ -143,11 +140,11 @@ $sql_select = "SELECT mp.PropertyID, mp.PropertyName, mp.PropertyPrice, mp.Prope
 
 $where_clause = "";
 if (!empty($search_query)) {
-    // Search based on Name OR Location
+
     $where_clause = " WHERE mp.PropertyName LIKE ? OR mp.PropertyLocation LIKE ? ";
 }
 
-// --- Total Count Query ---
+
 $count_stmt = $conn->prepare($sql_count . $where_clause);
 if (!empty($search_query)) {
     $count_stmt->bind_param("ss", $search_param, $search_param);
@@ -157,7 +154,7 @@ $total_rows = $count_stmt->get_result()->fetch_assoc()['total'];
 $total_pages = ceil($total_rows / $limit);
 $count_stmt->close();
 
-// --- Main Select Query ---
+
 $properties = [];
 $select_stmt = $conn->prepare($sql_select . $where_clause . " ORDER BY mp.PropertyID DESC LIMIT ? OFFSET ?");
 
@@ -183,7 +180,7 @@ $select_stmt->close();
     <title>Manage Properties</title>
     <link rel="stylesheet" href="manage_properties.css">
     <script>
-        // Fungsi untuk mengkonfirmasi Delete
+
         function confirmDelete(id, name) {
             return confirm(`Are you sure you want to delete property #${id}: ${name}?`);
         }

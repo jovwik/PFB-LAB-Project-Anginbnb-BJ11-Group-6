@@ -1,11 +1,11 @@
 <?php
 session_start();
-require 'config.php'; // Asumsikan file config.php berisi koneksi $conn
+require 'config.php';
 
-/* ====== SIMULASI ADMIN LOGIN ====== */
+
 $_SESSION['role'] = 'admin';
 if ($_SESSION['role'] !== 'admin') {
-    // Redirect jika bukan admin (ini tetap dipertahankan untuk keamanan)
+
     header("Location: index.php");
     exit();
 }
@@ -13,20 +13,20 @@ if ($_SESSION['role'] !== 'admin') {
 $success_message = '';
 $error_message = '';
 $errors = [];
-$is_valid_access = true; // Flag untuk menentukan apakah konten harus ditampilkan
+$is_valid_access = true; 
 
-/* ====== A. GET PROPERTY ID AND FETCH CURRENT DATA ====== */
+
 $property_id = $_GET['id'] ?? null;
 
-// --- PERUBAHAN UTAMA: Ganti Redirect dengan Pengecekan Flag ---
+
 if (!$property_id || !is_numeric($property_id)) {
     $error_message = "Error: Invalid or missing Property ID. Please select a property from the Manage Properties list.";
     $is_valid_access = false;
-    $data = []; // Inisialisasi data kosong untuk mencegah error PHP
+    $data = []; 
 }
 
 if ($is_valid_access) {
-    // 1. Fetch Current Property Data
+
     $property = null;
     $fetchStmt = $conn->prepare("SELECT PropertyID, PropertyName, PropertyLocation, PropertyPrice, PropertyDescription, PropertyRating, CategoryID FROM msproperty WHERE PropertyID = ?");
     $fetchStmt->bind_param("i", $property_id);
@@ -35,12 +35,12 @@ if ($is_valid_access) {
     $fetchStmt->close();
 
     if (!$property) {
-        // Jika properti tidak ditemukan
+
         $error_message = "Error: Property with ID #$property_id not found in the database.";
         $is_valid_access = false;
         $data = [];
     } else {
-        // 2. Fetch Categories for Dropdown (Hanya jika properti valid)
+ 
         $categories = [];
         $categoryStmt = $conn->prepare("SELECT CategoryID, CategoryName FROM mscategory ORDER BY CategoryName ASC");
         $categoryStmt->execute();
@@ -50,15 +50,15 @@ if ($is_valid_access) {
         }
         $categoryStmt->close();
 
-        // Inisialisasi data form dengan data properti saat ini
+
         $data = $property;
     }
 }
 
 
-/* ====== B. UPDATE PROPERTY LOGIC (Hanya diproses jika akses valid) ====== */
+
 if ($is_valid_access && isset($_POST['update_property'])) {
-    // Ambil data dari form
+
     $name = trim($_POST['name'] ?? '');
     $location = trim($_POST['location'] ?? '');
     $price = trim($_POST['price'] ?? '');
@@ -66,7 +66,7 @@ if ($is_valid_access && isset($_POST['update_property'])) {
     $categoryID = $_POST['category'] ?? '';
     $description = trim($_POST['description'] ?? '');
 
-    // Update data array $data dengan POST data untuk mempertahankan input di form jika terjadi error
+
     $data['PropertyName'] = $name;
     $data['PropertyLocation'] = $location;
     $data['PropertyPrice'] = $price;
@@ -74,37 +74,34 @@ if ($is_valid_access && isset($_POST['update_property'])) {
     $data['CategoryID'] = $categoryID;
     $data['PropertyDescription'] = $description;
 
-    // --- Validasi Kriteria ---
-    // (Kode validasi sama seperti sebelumnya, tidak diubah)
-    
-    // Name
+
     if (empty($name)) $errors['name'] = 'Name must be filled.';
     if (strlen($name) > 100) $errors['name'] = 'Name must be less than 100 characters.';
     if (!empty($name) && !preg_match("/^[a-zA-Z\s,.'-]*$/", $name)) $errors['name'] = 'Name must NOT contain numbers and special characters.';
 
-    // Location
+
     if (empty($location)) $errors['location'] = 'Location must be filled.';
     if (strlen($location) > 255) $errors['location'] = 'Location must be less than 255 characters.';
 
-    // Price
+
     if (empty($price)) $errors['price'] = 'Price must be filled.';
     if (!is_numeric($price) || $price < 1) $errors['price'] = 'Price must be numeric and at least 1.';
 
-    // Rating
+
     if (empty($rating)) $errors['rating'] = 'Rating must be filled.';
     if (!is_numeric($rating)) $errors['rating'] = 'Rating must be numeric.';
     if ($rating < 0 || $rating > 10) $errors['rating'] = 'Rating must be between 0 and 10.';
     
-    // Category
+
     if (empty($categoryID)) $errors['category'] = 'Category must be chosen.';
 
-    // Description
+ 
     if (empty($description)) $errors['description'] = 'Description must be filled.';
     if (strlen($description) > 2000) $errors['description'] = 'Description must be less than 2000 characters.';
 
 
     if (empty($errors)) {
-        // Lakukan UPDATE jika validasi berhasil
+
         
         $updateStmt = $conn->prepare("UPDATE msproperty SET PropertyName=?, PropertyLocation=?, PropertyPrice=?, PropertyDescription=?, PropertyRating=?, CategoryID=? WHERE PropertyID=?");
         
@@ -116,7 +113,7 @@ if ($is_valid_access && isset($_POST['update_property'])) {
 
         if ($updateStmt->execute()) {
             $success_message = "Property **" . htmlspecialchars($name) . "** updated successfully.";
-            // Refresh data setelah update
+
             $temp_data = $conn->prepare("SELECT PropertyID, PropertyName, PropertyLocation, PropertyPrice, PropertyDescription, PropertyRating, CategoryID FROM msproperty WHERE PropertyID = ?");
             $temp_data->bind_param("i", $property_id);
             $temp_data->execute();
@@ -177,7 +174,7 @@ $conn->close();
         <div class="property-info">
             ID: <?= $data['PropertyID'] ?> | Current Category: 
             <?php 
-                // Cari nama kategori dari array categories
+
                 $current_cat_name = array_filter($categories, function($cat) use ($data) {
                     return $cat['CategoryID'] == $data['CategoryID'];
                 });

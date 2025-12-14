@@ -1,18 +1,14 @@
-/* Import/Include manage_properties.css styles */
-
-/* Spesifik untuk Edit Property Page */
-
 .container {
-    /* Turunkan lagi max-width di container halaman edit agar tampilannya lebih terpusat */
+
     max-width: 1000px; 
     margin: 40px auto;
     padding: 0 40px; 
     flex-grow: 1; 
 }
 
-/* Container utama kartu form */
+
 .edit-form-container {
-    max-width: 650px; /* Lebar Kartu Form agar mirip Figure 19 */
+    max-width: 650px; 
     margin: 30px auto; 
     padding: 40px;
 }
@@ -54,7 +50,7 @@
 }
 
 .edit-form .form-group {
-    /* Memastikan setiap group input memenuhi lebar penuh kartu */
+
     flex: 0 0 100%;
     margin-bottom: 15px; 
 }
@@ -63,7 +59,7 @@
     font-size: 14px;
     color: #333;
     margin-bottom: 8px;
-    display: block; /* Memastikan label berdiri sendiri */
+    display: block; 
 }
 
 .edit-form input, 
@@ -78,7 +74,7 @@
 }
 
 
-/* Tombol Aksi */
+
 .action-buttons {
     display: flex;
     justify-content: space-between;
@@ -99,7 +95,7 @@
     border: none;
 }
 
-/* Tombol Update */
+
 .btn-primary {
     background: #ff4d6d;
     color: white;
@@ -109,7 +105,7 @@
     background: #e63950;
 }
 
-/* Tombol Back to List */
+
 .btn-secondary {
     background: #fff;
     color: #ff4d6d;
