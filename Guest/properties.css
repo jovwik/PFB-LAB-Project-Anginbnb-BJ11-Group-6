@@ -8,7 +8,7 @@ body {
     background: #f7f7f7;
 }
 
-/* NAVBAR */
+
 .navbar {
     background: white;
     border-bottom: 1px solid #eee;
@@ -51,7 +51,7 @@ nav .active {
     border: none;
 }
 
-/* MAIN */
+
 .main {
     max-width: 1100px;
     margin: 40px auto;
@@ -65,7 +65,7 @@ h1 {
     margin-bottom: 25px;
 }
 
-/* SEARCH & FILTER */
+
 .search-bar,
 .filter-bar {
     display: flex;
@@ -97,7 +97,7 @@ h1 {
     border-radius: 8px;
 }
 
-/* GRID */
+
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -105,7 +105,7 @@ h1 {
     margin-top: 25px;
 }
 
-/* CARD */
+
 .card {
     border: 1px solid #eee;
     border-radius: 12px;
@@ -137,7 +137,7 @@ h1 {
     font-weight: bold;
 }
 
-/* PAGINATION */
+
 .pagination {
     text-align: center;
     margin-top: 30px;
@@ -155,7 +155,7 @@ h1 {
     color: white;
 }
 
-/* FOOTER */
+
 .footer {
     background: #f7f7f7;
     padding: 40px;

@@ -8,7 +8,7 @@ $page     = $_GET['page'] ?? 1;
 $limit  = 6;
 $offset = ($page - 1) * $limit;
 
-/* ================= COUNT ================= */
+
 $countSql = "
     SELECT COUNT(*) AS total
     FROM msproperty p
@@ -30,7 +30,7 @@ $stmt->execute();
 $total = $stmt->get_result()->fetch_assoc()['total'];
 $totalPages = ceil($total / $limit);
 
-/* ================= DATA ================= */
+
 $dataSql = "
     SELECT 
         p.PropertyID,
@@ -55,7 +55,7 @@ $stmt->bind_param($types, ...$params);
 $stmt->execute();
 $properties = $stmt->get_result();
 
-/* ================= CATEGORY ================= */
+
 $categories = $conn->query("SELECT * FROM mscategory");
 ?>
 
@@ -67,7 +67,6 @@ $categories = $conn->query("SELECT * FROM mscategory");
 </head>
 <body>
 
-<!-- ================= NAVBAR ================= -->
 <header class="navbar">
     <div class="nav-inner">
         <div class="logo">anginbnb</div>
@@ -82,17 +81,16 @@ $categories = $conn->query("SELECT * FROM mscategory");
     </div>
 </header>
 
-<!-- ================= MAIN ================= -->
 <main class="main">
     <h1>All Properties</h1>
 
-    <!-- SEARCH -->
+
     <div class="search-bar">
         <input type="text" placeholder="Search properties by name or location...">
         <button class="search-btn">Search</button>
     </div>
 
-    <!-- FILTER -->
+   
     <div class="filter-bar">
         <select>
             <option>All Categories</option>
@@ -100,7 +98,7 @@ $categories = $conn->query("SELECT * FROM mscategory");
         <button class="filter-btn">Filter</button>
     </div>
 
-    <!-- GRID -->
+
     <div class="grid">
         <?php for ($i=0; $i<6; $i++): ?>
         <div class="card">
@@ -114,7 +112,7 @@ $categories = $conn->query("SELECT * FROM mscategory");
         <?php endfor; ?>
     </div>
 
-    <!-- PAGINATION -->
+
     <div class="pagination">
         <a class="active">1</a>
         <a>2</a>
@@ -123,7 +121,7 @@ $categories = $conn->query("SELECT * FROM mscategory");
     </div>
 </main>
 
-<!-- ================= FOOTER ================= -->
+
 <footer class="footer">
     <div class="footer-grid">
         <div>
