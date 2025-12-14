@@ -1,5 +1,4 @@
 
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -51,8 +50,8 @@
     flex-grow: 1; 
     display: flex;
     justify-content: center;
-    align-items: cent
-    padding: 50px 0; 
+    align-items: center;
+    padding: 50px 0;
 }
 
 .login-card {
