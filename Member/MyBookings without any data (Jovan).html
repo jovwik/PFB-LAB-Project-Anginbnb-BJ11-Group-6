@@ -4,24 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="MyBookings.css">
+
 </head>
 <body>
     <header>
-        <div>placeholder</div>
+        <div class="logo">anginbnb</div>
+        
+        <nav class="navcent">
+            <a href="#">Home</a>
+            <a href="#">Properties</a>
+            <a href="#" class="active">My Bookings</a>
+            <a href="#" class="active">Profile</a>
+            <a href="#">Logout</a>
+        </nav>
+        
+        <div class="navkanan">
+            <span class="welcome-text">Welcome, Intan</span>
+        </div>
     </header>
 
     <main>
         <h1>My Bookings</h1>
-        <p>Manage your current and past reservations</p>
-        <div>
+        <p id="text1">Manage your current and past reservations</p>
+        <div class="bookings-content">
             <h3>No bookings yet</h3>
-            <p>You havenb't made any bookings yet. Start exploring amazibng properties!</p>
+            <p>You haven't made any bookings yet. Start exploring amazing properties!</p>
             <button onclick="window.location.href='properties-page.html'">Browse Properties</button>
         </div>
     </main>
 
     <footer>
-        <div>placeholder</div>
+        <div class="footcont">
+            <div>
+                <h4>Anginbnb</h4>
+                <p>Your home away from home. Discover unique places to stay around the world.</p>
+            </div>
+            <div>
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Safety Information</a></li>
+                    <li><a href="#">Cancellation Options</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="#">Anginbnb Blog</a></li>
+                    <li><a href="#">Host Resources</a></li>
+                    <li><a href="#">Community Forum</a></li>
+                    <li><a href="#">Refer Friends</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Investors</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <div>© 2025 Anginbnb, Inc. All rights reserved.</div>
+            <div class="rightside">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookies Policy</a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
